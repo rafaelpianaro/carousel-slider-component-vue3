@@ -1,12 +1,18 @@
 <template>
   <div class="carousel">
-      <slot />
+      <slot :currentSlide="currentSlide" />
   </div>
 </template>
 
 <script>
-export default {
+import { ref } from 'vue'
 
+export default {
+  setup() {
+    const currentSlide = ref(1)
+
+    return { currentSlide }
+  }
 }
 </script>
 
