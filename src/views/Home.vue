@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <Carousel class="carousel">
-      <Slide>
+      <Slide v-for="(slide, index) in carouselSlides" :key="index">
         <div>
           <p>hellloo</p>
         </div>
@@ -16,8 +16,10 @@ import Slide from '../components/Slide.vue'
 
 export default {
   name: 'Home',
-  components: {
-    Carousel, Slide
+  components: { Carousel, Slide },
+  setup() { 
+    const carouselSlides = ['bg-1', 'bg-2', 'bg-3']
+    return { carouselSlides }
   }
 }
 </script>
