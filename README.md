@@ -1,5 +1,11 @@
 # carousel-slider-component-vue3
 
+# from
+
+```
+https://youtu.be/rZQ72SFGYwk
+```
+
 ## Project setup
 ```
 npm install
