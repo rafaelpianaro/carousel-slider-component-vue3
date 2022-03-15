@@ -33,6 +33,8 @@ export default {
   setup() {
     const currentSlide = ref(1)
     const getSlideCount = ref(null)
+    const autoPlayEnabled = ref(true)
+    const timeoutDuration = ref(5000)
 
     // next slide
     const nextSlide = () => {
@@ -55,6 +57,16 @@ export default {
     const goToSlide = (index) => {
       currentSlide.value = index + 1;
     };
+
+    // autoplay
+    const autoPlay = () => {
+      setInterval(() => {
+        nextSlide();
+      }, timeoutDuration.value);
+    };
+    if (autoPlayEnabled.value) {
+      autoPlay();
+    }
 
     onMounted(() => {
       getSlideCount.value = document.querySelectorAll('.slide').length
