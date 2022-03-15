@@ -19,6 +19,7 @@ export default {
   components: { Carousel, Slide },
   setup() { 
     const carouselSlides = ['bg-1', 'bg-2', 'bg-3']
+    
     return { carouselSlides }
   }
 }
